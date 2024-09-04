@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javapruefunglearning.Controller.MaintenanceController">
+    <center>
+        <TableView fx:id="maintenanceTable">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" />
+                <TableColumn fx:id="propertyColumn" text="Property" />
+                <TableColumn fx:id="plantColumn" text="Plant" />
+                <TableColumn fx:id="quantityColumn" text="Quantity" />
+                <TableColumn fx:id="lastMaintenanceColumn" text="Last Maintenance" />
+                <TableColumn fx:id="nextMaintenanceColumn" text="Next Maintenance" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <GridPane padding="10">
+            <Label text="Property:" />
+            <ComboBox fx:id="propertyComboBox" GridPane.columnIndex="1" />
+            <Label text="Plant:" GridPane.rowIndex="1" />
+            <ComboBox fx:id="plantComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Quantity:" GridPane.rowIndex="2" />
+            <TextField fx:id="quantityField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Last Maintenance:" GridPane.rowIndex="3" />
+            <DatePicker fx:id="lastMaintenanceDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Next Maintenance:" GridPane.rowIndex="4" />
+            <DatePicker fx:id="nextMaintenanceDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button text="Add" onAction="#handleAddMaintenance" GridPane.rowIndex="5" />
+            <Button text="Edit" onAction="#handleEditMaintenance" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button text="Delete" onAction="#handleDeleteMaintenance" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        </GridPane>
+    </bottom>
+</BorderPane>
